@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCDEDEE315A5973000A31C94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE215A5973000A31C94 /* UIKit.framework */; };
+		DCDEDEE515A5973000A31C94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE415A5973000A31C94 /* Foundation.framework */; };
+		DCDEDEE715A5973000A31C94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE615A5973000A31C94 /* CoreGraphics.framework */; };
+		DCDEDEED15A5973000A31C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCDEDEEB15A5973000A31C94 /* InfoPlist.strings */; };
+		DCDEDEEF15A5973000A31C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDEDEEE15A5973000A31C94 /* main.m */; };
+		DCDEDEF315A5973000A31C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDEDEF215A5973000A31C94 /* AppDelegate.m */; };
+		DCDEDEF615A5973000A31C94 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDEDEF515A5973000A31C94 /* ViewController.m */; };
+		DCDEDEF915A5973000A31C94 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDEDEF715A5973000A31C94 /* ViewController_iPhone.xib */; };
+		DCDEDEFC15A5973000A31C94 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDEDEFA15A5973000A31C94 /* ViewController_iPad.xib */; };
+		DCDEDF0415A5973000A31C94 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDF0315A5973000A31C94 /* SenTestingKit.framework */; };
+		DCDEDF0515A5973000A31C94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE215A5973000A31C94 /* UIKit.framework */; };
+		DCDEDF0615A5973000A31C94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE415A5973000A31C94 /* Foundation.framework */; };
+		DCDEDF0E15A5973000A31C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCDEDF0C15A5973000A31C94 /* InfoPlist.strings */; };
+		DCDEDF1115A5973000A31C94 /* KOAProgressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDEDF1015A5973000A31C94 /* KOAProgressTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCDEDF0715A5973000A31C94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDEDED515A5973000A31C94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDEDEDD15A5973000A31C94;
+			remoteInfo = KOAProgress;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DCDEDEDE15A5973000A31C94 /* KOAProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOAProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDEDEE215A5973000A31C94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DCDEDEE415A5973000A31C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DCDEDEE615A5973000A31C94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DCDEDEEA15A5973000A31C94 /* KOAProgress-Info.plist */ = {isa = PBXFileReference; path = "KOAProgress-Info.plist"; sourceTree = "<group>"; };
+		DCDEDEEC15A5973000A31C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DCDEDEEE15A5973000A31C94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCDEDEF015A5973000A31C94 /* KOAProgress-Prefix.pch */ = {isa = PBXFileReference; path = "KOAProgress-Prefix.pch"; sourceTree = "<group>"; };
+		DCDEDEF115A5973000A31C94 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCDEDEF215A5973000A31C94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCDEDEF415A5973000A31C94 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		DCDEDEF515A5973000A31C94 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DCDEDEF815A5973000A31C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		DCDEDEFB15A5973000A31C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		DCDEDF0215A5973000A31C94 /* KOAProgressTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KOAProgressTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDEDF0315A5973000A31C94 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DCDEDF0B15A5973000A31C94 /* KOAProgressTests-Info.plist */ = {isa = PBXFileReference; path = "KOAProgressTests-Info.plist"; sourceTree = "<group>"; };
+		DCDEDF0D15A5973000A31C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DCDEDF0F15A5973000A31C94 /* KOAProgressTests.h */ = {isa = PBXFileReference; path = KOAProgressTests.h; sourceTree = "<group>"; };
+		DCDEDF1015A5973000A31C94 /* KOAProgressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KOAProgressTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCDEDEDB15A5973000A31C94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEDEE315A5973000A31C94 /* UIKit.framework in Frameworks */,
+				DCDEDEE515A5973000A31C94 /* Foundation.framework in Frameworks */,
+				DCDEDEE715A5973000A31C94 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEDEFE15A5973000A31C94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEDF0415A5973000A31C94 /* SenTestingKit.framework in Frameworks */,
+				DCDEDF0515A5973000A31C94 /* UIKit.framework in Frameworks */,
+				DCDEDF0615A5973000A31C94 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCDEDED315A5973000A31C94 = {
+			isa = PBXGroup;
+			children = (
+				DCDEDEE815A5973000A31C94 /* KOAProgress */,
+				DCDEDF0915A5973000A31C94 /* KOAProgressTests */,
+				DCDEDEE115A5973000A31C94 /* Frameworks */,
+				DCDEDEDF15A5973000A31C94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCDEDEDF15A5973000A31C94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEDEDE15A5973000A31C94 /* KOAProgress.app */,
+				DCDEDF0215A5973000A31C94 /* KOAProgressTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCDEDEE115A5973000A31C94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEDEE215A5973000A31C94 /* UIKit.framework */,
+				DCDEDEE415A5973000A31C94 /* Foundation.framework */,
+				DCDEDEE615A5973000A31C94 /* CoreGraphics.framework */,
+				DCDEDF0315A5973000A31C94 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCDEDEE815A5973000A31C94 /* KOAProgress */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEDEF115A5973000A31C94 /* AppDelegate.h */,
+				DCDEDEF215A5973000A31C94 /* AppDelegate.m */,
+				DCDEDEF415A5973000A31C94 /* ViewController.h */,
+				DCDEDEF515A5973000A31C94 /* ViewController.m */,
+				DCDEDEF715A5973000A31C94 /* ViewController_iPhone.xib */,
+				DCDEDEFA15A5973000A31C94 /* ViewController_iPad.xib */,
+				DCDEDEE915A5973000A31C94 /* Supporting Files */,
+			);
+			path = KOAProgress;
+			sourceTree = "<group>";
+		};
+		DCDEDEE915A5973000A31C94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEDEEA15A5973000A31C94 /* KOAProgress-Info.plist */,
+				DCDEDEEB15A5973000A31C94 /* InfoPlist.strings */,
+				DCDEDEEE15A5973000A31C94 /* main.m */,
+				DCDEDEF015A5973000A31C94 /* KOAProgress-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCDEDF0915A5973000A31C94 /* KOAProgressTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEDF0F15A5973000A31C94 /* KOAProgressTests.h */,
+				DCDEDF1015A5973000A31C94 /* KOAProgressTests.m */,
+				DCDEDF0A15A5973000A31C94 /* Supporting Files */,
+			);
+			path = KOAProgressTests;
+			sourceTree = "<group>";
+		};
+		DCDEDF0A15A5973000A31C94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEDF0B15A5973000A31C94 /* KOAProgressTests-Info.plist */,
+				DCDEDF0C15A5973000A31C94 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCDEDEDD15A5973000A31C94 /* KOAProgress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDEDF1415A5973000A31C94 /* Build configuration list for PBXNativeTarget "KOAProgress" */;
+			buildPhases = (
+				DCDEDEDA15A5973000A31C94 /* Sources */,
+				DCDEDEDB15A5973000A31C94 /* Frameworks */,
+				DCDEDEDC15A5973000A31C94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KOAProgress;
+			productName = KOAProgress;
+			productReference = DCDEDEDE15A5973000A31C94 /* KOAProgress.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCDEDF0115A5973000A31C94 /* KOAProgressTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDEDF1715A5973000A31C94 /* Build configuration list for PBXNativeTarget "KOAProgressTests" */;
+			buildPhases = (
+				DCDEDEFD15A5973000A31C94 /* Sources */,
+				DCDEDEFE15A5973000A31C94 /* Frameworks */,
+				DCDEDEFF15A5973000A31C94 /* Resources */,
+				DCDEDF0015A5973000A31C94 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDEDF0815A5973000A31C94 /* PBXTargetDependency */,
+			);
+			name = KOAProgressTests;
+			productName = KOAProgressTests;
+			productReference = DCDEDF0215A5973000A31C94 /* KOAProgressTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCDEDED515A5973000A31C94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = KeepOnApps;
+			};
+			buildConfigurationList = DCDEDED815A5973000A31C94 /* Build configuration list for PBXProject "KOAProgress" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DCDEDED315A5973000A31C94;
+			productRefGroup = DCDEDEDF15A5973000A31C94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCDEDEDD15A5973000A31C94 /* KOAProgress */,
+				DCDEDF0115A5973000A31C94 /* KOAProgressTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCDEDEDC15A5973000A31C94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEDEED15A5973000A31C94 /* InfoPlist.strings in Resources */,
+				DCDEDEF915A5973000A31C94 /* ViewController_iPhone.xib in Resources */,
+				DCDEDEFC15A5973000A31C94 /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEDEFF15A5973000A31C94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEDF0E15A5973000A31C94 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DCDEDF0015A5973000A31C94 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCDEDEDA15A5973000A31C94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEDEEF15A5973000A31C94 /* main.m in Sources */,
+				DCDEDEF315A5973000A31C94 /* AppDelegate.m in Sources */,
+				DCDEDEF615A5973000A31C94 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEDEFD15A5973000A31C94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEDF1115A5973000A31C94 /* KOAProgressTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCDEDF0815A5973000A31C94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDEDEDD15A5973000A31C94 /* KOAProgress */;
+			targetProxy = DCDEDF0715A5973000A31C94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCDEDEEB15A5973000A31C94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDEDEEC15A5973000A31C94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DCDEDEF715A5973000A31C94 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDEDEF815A5973000A31C94 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		DCDEDEFA15A5973000A31C94 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDEDEFB15A5973000A31C94 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		DCDEDF0C15A5973000A31C94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDEDF0D15A5973000A31C94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCDEDF1215A5973000A31C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCDEDF1315A5973000A31C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCDEDF1515A5973000A31C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KOAProgress/KOAProgress-Prefix.pch";
+				INFOPLIST_FILE = "KOAProgress/KOAProgress-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DCDEDF1615A5973000A31C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KOAProgress/KOAProgress-Prefix.pch";
+				INFOPLIST_FILE = "KOAProgress/KOAProgress-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DCDEDF1815A5973000A31C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KOAProgress.app/KOAProgress";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KOAProgress/KOAProgress-Prefix.pch";
+				INFOPLIST_FILE = "KOAProgressTests/KOAProgressTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DCDEDF1915A5973000A31C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KOAProgress.app/KOAProgress";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KOAProgress/KOAProgress-Prefix.pch";
+				INFOPLIST_FILE = "KOAProgressTests/KOAProgressTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCDEDED815A5973000A31C94 /* Build configuration list for PBXProject "KOAProgress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEDF1215A5973000A31C94 /* Debug */,
+				DCDEDF1315A5973000A31C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDEDF1415A5973000A31C94 /* Build configuration list for PBXNativeTarget "KOAProgress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEDF1515A5973000A31C94 /* Debug */,
+				DCDEDF1615A5973000A31C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCDEDF1715A5973000A31C94 /* Build configuration list for PBXNativeTarget "KOAProgressTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEDF1815A5973000A31C94 /* Debug */,
+				DCDEDF1915A5973000A31C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCDEDED515A5973000A31C94 /* Project object */;
+}
