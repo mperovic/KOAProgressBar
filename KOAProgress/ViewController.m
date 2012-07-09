@@ -21,12 +21,13 @@
     [super viewDidLoad];
 	
 	self.view.backgroundColor = [UIColor colorWithRed:0.85 green:0.25 blue:0.25 alpha:0.9];
-	[self.progressBar setMinValue:0.25];
+	[self.progressBar setMinValue:0.0];
 	self.progressBar.realProgress = 0.05;
-	[self.progressBar setMaxValue:0.75];
+	[self.progressBar setMaxValue:1.0];
 	self.progressBar.displayedWhenStopped = NO;
-	self.progressBar.timerInterval = 0.15;
-	self.progressBar.progressValue = 0.01;
+//	self.progressBar.timerInterval = 0.05;
+//	self.progressBar.progressValue = 0.005;
+	[self.progressBar setAnimationDuration:5.0];
 	
 	[self.progressBar startAnimation:self];
 }

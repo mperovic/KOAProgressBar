@@ -16,6 +16,7 @@
 
 @property (readonly, strong) NSTimer* animator;
 @property double progressOffset;
+@property (readonly) float animatioDuration;
 
 - (void)initializeProgressBar;
 
@@ -46,6 +47,17 @@
     if (self) {
         // Initialization code
 		[self initializeProgressBar];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame duration:(float)duration {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+		[self initializeProgressBar];
+		
+		[self setAnimationDuration:duration];
     }
     return self;
 }
@@ -400,6 +412,12 @@
 
 - (void)dealloc {
 	[_animator invalidate];
+}
+
+- (void)setAnimationDuration:(float)duration {
+	float distance = self.maxValue - self.minValue;
+	float steps = distance / self.progressValue;
+	self.timerInterval = duration / steps;
 }
 
 @end
