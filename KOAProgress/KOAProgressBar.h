@@ -21,14 +21,21 @@ enum components {
 @property float stripeWidth;
 @property float inset;
 @property float radius;
+@property (readonly) float realProgress;
 @property (strong) UIColor *progressBarColorBackground;
 @property (strong) UIColor *progressBarColorBackgroundGlow;
 @property (strong) UIColor *lighterProgressColor;
 @property (strong) UIColor *darkerProgressColor;
+@property float timerInterval;
+@property float progressValue;
 
 @property (readonly) float minValue;
 @property (readonly) float maxValue;
 
 - (void)setMinValue:(float)mValue;
 - (void)setMaxValue:(float)mValue;
+- (void)setRealProgress:(float)realProgress;
+
+-(void)startAnimation:(id)sender;
+- (void)stopAnimation:(id)sender;;
 @end

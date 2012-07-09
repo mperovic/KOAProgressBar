@@ -10,15 +10,13 @@
 #import "UIColor-Expanded.h"
 
 @interface KOAProgressBar () {
-
 	CGFloat components[8];
-
+	BOOL initialized;
 }
 
 @property (readonly, strong) NSTimer* animator;
 @property double progressOffset;
 
-- (void)stopAnimation;
 - (void)initializeProgressBar;
 
 @end
@@ -38,6 +36,9 @@
 @synthesize progressBarColorBackgroundGlow = _progressBarColorBackgroundGlow;
 @synthesize lighterProgressColor = _lighterProgressColor;
 @synthesize darkerProgressColor = _darkerProgressColor;
+@synthesize realProgress = _realProgress;
+@synthesize timerInterval = _timerInterval;
+@synthesize progressValue = _progressValue;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -63,6 +64,11 @@
 	self.stripeColor = [UIColor colorWithRed:101.0/255.0 green:151.0/255.0 blue:120.0/255.0 alpha:0.9];
 	self.lighterProgressColor = [UIColor colorWithRed:223.0/255.0 green:237.0/255.0 blue:180.0/255.0 alpha:1.0];
 	self.darkerProgressColor = [UIColor colorWithRed:156.0/255.0 green:200.0/255.0 blue:84.0/255.0 alpha:1.0];
+	self.displayedWhenStopped = YES;
+	self.timerInterval = 0.1;
+	self.progressValue = 0.01;
+
+	initialized = YES;
 }
 
 - (void)awakeFromNib
@@ -78,9 +84,6 @@
 {
     // Drawing code
     self.progressOffset = (self.progressOffset > (2*self.stripeWidth)-1) ? 0 : ++self.progressOffset;
-    
-//	float distance = self.maxValue - self.minValue;
-//	float value = (self.progress) ? self.progress/distance : 0;
     
     [self drawBackgroundWithRect:rect];
 
@@ -339,21 +342,52 @@
 }
 
 - (void)setProgress:(float)progress {
-	if (progress < self.minValue) {
-		progress = self.minValue;
-	}
-	if (progress > self.maxValue) {
-		progress = self.maxValue;
-	}
 	[super setProgress:progress];
 	
-    if (![self isDisplayedWhenStopped] && progress >= [self maxValue]) {
-        [self stopAnimation];
+	if (self.realProgress >= self.maxValue) {
+        [self stopAnimation:self];
+		if (!self.isDisplayedWhenStopped && initialized) {
+			self.hidden = YES;
+		}
+	}
+}
+
+- (void)setRealProgress:(float)realProgress {
+	_realProgress = realProgress;
+	if (self.realProgress < self.minValue) {
+		_realProgress = self.minValue;
+	}
+	if (self.realProgress > self.maxValue) {
+		_realProgress = self.maxValue;
+	}
+    
+	float distance = self.maxValue - self.minValue;
+	float value = (self.realProgress) ? (self.realProgress - self.minValue)/distance : 0;
+	
+	[self setProgress:value];
+}
+
+#pragma mark Animation
+-(void)startAnimation:(id)sender {
+    if (!self.animator) {
+        self.animator = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval
+														 target:self
+													   selector:@selector(activateAnimation:)
+													   userInfo:nil
+														repeats:YES];
     }
 }
 
-- (void)stopAnimation {
+-(void)stopAnimation:(id)sender {
     self.animator = nil;
+}
+
+-(void)activateAnimation:(NSTimer*)timer {
+    float progressValue = self.realProgress;
+    progressValue += self.progressValue;
+    [self setRealProgress:progressValue];
+	
+	[self setNeedsDisplay];
 }
 
 
