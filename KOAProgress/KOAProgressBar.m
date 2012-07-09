@@ -16,7 +16,7 @@
 
 @property (readonly, strong) NSTimer* animator;
 @property double progressOffset;
-@property (readonly) float animatioDuration;
+@property (readonly) float animationDuration;
 
 - (void)initializeProgressBar;
 
@@ -40,6 +40,7 @@
 @synthesize realProgress = _realProgress;
 @synthesize timerInterval = _timerInterval;
 @synthesize progressValue = _progressValue;
+@synthesize animationDuration = _animationDuration;
 
 - (id)initWithFrame:(CGRect)frame
 {
