@@ -36,9 +36,10 @@ enum components {
 - (void)setMaxValue:(float)mValue;
 - (void)setRealProgress:(float)realProgress;
 
-- (void)startAnimation:(id)sender;
-- (void)stopAnimation:(id)sender;
+- (id)initWithFrame:(CGRect)frame duration:(float)duration;
 - (void)setAnimationDuration:(float)duration;
 
-- (id)initWithFrame:(CGRect)frame duration:(float)duration;
+- (void)startAnimation:(id)sender;
+- (void)stopAnimation:(id)sender;
+
 @end

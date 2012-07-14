@@ -106,7 +106,6 @@
 		[self drawProgressWithBounds:bounds];
 		[self drawStripesInBounds:bounds];
 		[self drawGlossWithRect:bounds];
-//		[self drawShadowInBounds:bounds];
     }
 }
 
@@ -131,10 +130,6 @@
         
         UIBezierPath* roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, rect.size.width, rect.size.height-1) cornerRadius:self.radius];
         [roundedRect fill];
-        
-        // Draw the inner glow
-//		[self.progressBarColorBackgroundGlow set];
-//		[[UIColor whiteColor] set];
         
         CGMutablePathRef glow = CGPathCreateMutable();
         CGPathMoveToPoint(glow, NULL, self.radius, 0);
@@ -284,7 +279,7 @@
         CGContextSetBlendMode(ctx, kCGBlendModeOverlay);
         CGContextBeginTransparencyLayerWithRect(ctx, CGRectMake(rect.origin.x, rect.origin.y + floorf(rect.size.height) / 2, rect.size.width, floorf(rect.size.height) / 2), NULL);
         {
-            const CGFloat glossGradientComponents[] = {1.0f, 1.0f, 1.0f, 0.47f, 0.0f, 0.0f, 0.0f, 0.0f};
+            const CGFloat glossGradientComponents[] = {1.0f, 1.0f, 1.0f, 0.50f, 0.0f, 0.0f, 0.0f, 0.0f};
             const CGFloat glossGradientLocations[] = {1.0, 0.0};
             CGGradientRef glossGradient = CGGradientCreateWithColorComponents(colorSpace, glossGradientComponents, glossGradientLocations, (kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation));
             CGContextDrawLinearGradient(ctx, glossGradient, CGPointMake(0, 0), CGPointMake(0, rect.size.width), 0);
@@ -316,7 +311,7 @@
     }
     CGContextRestoreGState(ctx);
     
-    UIBezierPath *progressBounds    = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.radius];
+    UIBezierPath *progressBounds = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.radius];
     
     // Draw progress bar glow
     CGContextSaveGState(ctx);
@@ -382,6 +377,7 @@
 
 #pragma mark Animation
 -(void)startAnimation:(id)sender {
+	self.hidden = NO;
     if (!self.animator) {
         self.animator = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval
 														 target:self
@@ -402,7 +398,6 @@
 	
 	[self setNeedsDisplay];
 }
-
 
 -(void)setAnimator:(NSTimer *)value {
     if (_animator != value) {
