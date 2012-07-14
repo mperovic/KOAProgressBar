@@ -66,12 +66,12 @@
 - (void)initializeProgressBar {
 	_animator = nil;
 	self.progressOffset = 0.0;
-	self.shadowColor = [UIColor colorWithRed:223.0/255.0 green:238.0/255.0 blue:181.0/255.0 alpha:1.0];
 	self.stripeWidth = 7.0;
 	self.inset = 2.0;
 	self.radius = 10.0;
 	self.minValue = 0.0;
 	self.maxValue = 1.0;
+	self.shadowColor = [UIColor colorWithRed:223.0/255.0 green:238.0/255.0 blue:181.0/255.0 alpha:1.0];
 	self.progressBarColorBackground = [UIColor colorWithRed:25.0/255.0 green:29.0/255 blue:33.0/255.0 alpha:1.0];
 	self.progressBarColorBackgroundGlow = [UIColor colorWithRed:17.0/255.0 green:20.0/255.0 blue:23.0/255.0 alpha:1.0];
 	self.stripeColor = [UIColor colorWithRed:101.0/255.0 green:151.0/255.0 blue:120.0/255.0 alpha:0.9];
@@ -334,16 +334,16 @@
 
 #pragma mark -
 - (void)setMaxValue:(float)mValue {
-	if (mValue > 1.0 || mValue < _minValue) {
-		_maxValue = 1.0;
+	if (mValue < _minValue) {
+		_maxValue = _minValue + 1.0;
 	} else {
 		_maxValue = mValue;
 	}
 }
 
 - (void)setMinValue:(float)mValue {
-	if (mValue < 0.0 || mValue > _maxValue) {
-		_minValue = 0.0;
+	if (mValue > _maxValue) {
+		_minValue = _maxValue - 1.0;
 	} else {
 		_minValue = mValue;
 	}
