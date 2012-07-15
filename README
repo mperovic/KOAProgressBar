@@ -29,3 +29,6 @@ Or just set animation duration and component will do all math for you:
 
 And do the magic:
   [koaProgressBar startAnimation:self];
+
+contact:
+  contact@keeponapps.com
