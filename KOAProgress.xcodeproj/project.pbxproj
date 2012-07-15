@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC60124515A6DC8D000FB9B0 /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = DC60124415A6DC8D000FB9B0 /* UIColor-Expanded.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DCDEDEE315A5973000A31C94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE215A5973000A31C94 /* UIKit.framework */; };
 		DCDEDEE515A5973000A31C94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE415A5973000A31C94 /* Foundation.framework */; };
 		DCDEDEE715A5973000A31C94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDEDEE615A5973000A31C94 /* CoreGraphics.framework */; };
@@ -23,6 +22,7 @@
 		DCDEDF0E15A5973000A31C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCDEDF0C15A5973000A31C94 /* InfoPlist.strings */; };
 		DCDEDF1115A5973000A31C94 /* KOAProgressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDEDF1015A5973000A31C94 /* KOAProgressTests.m */; };
 		DCDEDF2015A5ADE900A31C94 /* KOAProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDEDF1F15A5ADE900A31C94 /* KOAProgressBar.m */; };
+		DCE4191C15B342BE000EEA5F /* koaGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE4191B15B342BE000EEA5F /* koaGradient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DC60124315A6DC8D000FB9B0 /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
-		DC60124415A6DC8D000FB9B0 /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
 		DCDEDEDE15A5973000A31C94 /* KOAProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOAProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDEDEE215A5973000A31C94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DCDEDEE415A5973000A31C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +58,8 @@
 		DCDEDF1015A5973000A31C94 /* KOAProgressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KOAProgressTests.m; sourceTree = "<group>"; };
 		DCDEDF1E15A5ADE900A31C94 /* KOAProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOAProgressBar.h; sourceTree = "<group>"; };
 		DCDEDF1F15A5ADE900A31C94 /* KOAProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOAProgressBar.m; sourceTree = "<group>"; };
+		DCE4191A15B342BE000EEA5F /* koaGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = koaGradient.h; sourceTree = "<group>"; };
+		DCE4191B15B342BE000EEA5F /* koaGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = koaGradient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,6 @@
 		DCDEDEE815A5973000A31C94 /* KOAProgress */ = {
 			isa = PBXGroup;
 			children = (
-				DC60124315A6DC8D000FB9B0 /* UIColor-Expanded.h */,
-				DC60124415A6DC8D000FB9B0 /* UIColor-Expanded.m */,
 				DCDEDEF115A5973000A31C94 /* AppDelegate.h */,
 				DCDEDEF215A5973000A31C94 /* AppDelegate.m */,
 				DCDEDEF415A5973000A31C94 /* ViewController.h */,
@@ -130,6 +128,8 @@
 				DCDEDEE915A5973000A31C94 /* Supporting Files */,
 				DCDEDF1E15A5ADE900A31C94 /* KOAProgressBar.h */,
 				DCDEDF1F15A5ADE900A31C94 /* KOAProgressBar.m */,
+				DCE4191A15B342BE000EEA5F /* koaGradient.h */,
+				DCE4191B15B342BE000EEA5F /* koaGradient.m */,
 			);
 			path = KOAProgress;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 				DCDEDEF315A5973000A31C94 /* AppDelegate.m in Sources */,
 				DCDEDEF615A5973000A31C94 /* ViewController.m in Sources */,
 				DCDEDF2015A5ADE900A31C94 /* KOAProgressBar.m in Sources */,
-				DC60124515A6DC8D000FB9B0 /* UIColor-Expanded.m in Sources */,
+				DCE4191C15B342BE000EEA5F /* koaGradient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

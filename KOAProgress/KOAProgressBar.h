@@ -26,6 +26,8 @@ enum components {
 @property (strong) UIColor *progressBarColorBackgroundGlow;
 @property (strong) UIColor *lighterProgressColor;
 @property (strong) UIColor *darkerProgressColor;
+@property (strong) UIColor *lighterStripeColor;
+@property (strong) UIColor *darkerStripeColor;
 @property float timerInterval;
 @property float progressValue;
 

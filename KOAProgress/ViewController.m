@@ -24,7 +24,7 @@
 	[self.progressBar setMinValue:0.0];
 	[self.progressBar setMaxValue:1.0];
 	[self.progressBar setRealProgress:0.25];
-	[self.progressBar setDisplayedWhenStopped:NO];
+	[self.progressBar setDisplayedWhenStopped:YES];
 //	[self.progressBar setTimerInterval:0.05];
 //	[self.progressBar setProgressValue:0.005];
 	[self.progressBar setAnimationDuration:5.0];

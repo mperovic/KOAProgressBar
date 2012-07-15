@@ -7,7 +7,7 @@
 //
 
 #import "KOAProgressBar.h"
-#import "UIColor-Expanded.h"
+#import "koaGradient.h"
 
 @interface KOAProgressBar () {
 	CGFloat components[8];
@@ -41,6 +41,8 @@
 @synthesize timerInterval = _timerInterval;
 @synthesize progressValue = _progressValue;
 @synthesize animationDuration = _animationDuration;
+@synthesize lighterStripeColor = _lighterStripeColor;
+@synthesize darkerStripeColor = _darkerStripeColor;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -66,7 +68,7 @@
 - (void)initializeProgressBar {
 	_animator = nil;
 	self.progressOffset = 0.0;
-	self.stripeWidth = 7.0;
+	self.stripeWidth = 10.0;
 	self.inset = 2.0;
 	self.radius = 10.0;
 	self.minValue = 0.0;
@@ -77,6 +79,8 @@
 	self.stripeColor = [UIColor colorWithRed:101.0/255.0 green:151.0/255.0 blue:120.0/255.0 alpha:0.9];
 	self.lighterProgressColor = [UIColor colorWithRed:223.0/255.0 green:237.0/255.0 blue:180.0/255.0 alpha:1.0];
 	self.darkerProgressColor = [UIColor colorWithRed:156.0/255.0 green:200.0/255.0 blue:84.0/255.0 alpha:1.0];
+	self.lighterStripeColor = [UIColor colorWithRed:182.0/255.0 green:216.0/255.0 blue:86.0/255.0 alpha:1.0];
+	self.darkerStripeColor = [UIColor colorWithRed:126.0/255.0 green:187.0/255.0 blue:55.0/255.0 alpha:1.0];
 	self.displayedWhenStopped = YES;
 	self.timerInterval = 0.1;
 	self.progressValue = 0.01;
@@ -98,7 +102,7 @@
     // Drawing code
     self.progressOffset = (self.progressOffset > (2*self.stripeWidth)-1) ? 0 : ++self.progressOffset;
     
-    [self drawBackgroundWithRect:rect];
+	[self drawBackgroundWithRect:rect];
 
     if (self.progress) {
         CGRect bounds = CGRectMake(self.inset, self.inset, self.frame.size.width*self.progress-2*self.inset, (self.frame.size.height-2*self.inset)-1);
@@ -166,105 +170,25 @@
 }
 
 -(void)drawStripesInBounds:(CGRect)frame {
-	CGContextRef ctx = UIGraphicsGetCurrentContext();
-	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-	CGContextSaveGState(ctx); {
-		UIBezierPath *allStripes = [UIBezierPath bezierPath];
-		
-		for (int i = 0; i <= frame.size.width/(2*self.stripeWidth)+(2*self.stripeWidth); i++) {
-			UIBezierPath *stripe = [self stripeWithOrigin:CGPointMake(i*2*self.stripeWidth+self.progressOffset, self.inset) bounds:frame];
-			[allStripes appendPath:stripe];
-		}
-		
-		//clip
-        UIBezierPath *clipPath = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:self.radius];
-		CGContextAddPath(ctx, [clipPath CGPath]);
-        CGContextClip(ctx);
-		
-        CGContextSaveGState(ctx);
-        {
-            // Clip the stripes
-            CGContextAddPath(ctx, [allStripes CGPath]);
-            CGContextClip(ctx);
-            
-            [self colorComponentsForComponent:stripesComponent];
-			CGFloat stripesColorComponents[4];
-			for (int i = 0; i < 4; i++) {
-				stripesColorComponents[i] = components[i];
-			}
-			CGColorRef stripesColor = CGColorCreate(colorSpace, stripesColorComponents);
-            
-			CGContextSetFillColorWithColor(ctx, stripesColor);
-			CGContextFillRect(ctx, frame);
-            
-			CGColorRelease(stripesColor);
-        }
-        CGContextRestoreGState(ctx);
-	}
-	CGContextRestoreGState(ctx);
-    CGColorSpaceRelease(colorSpace);
-}
-
-- (void)colorComponentsForComponent:(int)component {
-	for (int i = 0; i < 4; i++) {
-		NSArray *ccomponents;
-		switch (component) {
-			case progressComponent:
-				ccomponents = [self.lighterProgressColor arrayFromRGBAComponents];
-				break;
-				
-			case stripesComponent:
-				ccomponents = [self.stripeColor arrayFromRGBAComponents];
-				break;
-				
-			default:
-				break;
-		}
-		NSNumber *ccomponent = [ccomponents objectAtIndex:i];
-		components[i] = (CGFloat)[ccomponent floatValue];
-	}
-	for (int i = 0; i < 4; i++) {
-		NSArray *ccomponents;
-		switch (component) {
-			case progressComponent:
-				ccomponents = [self.darkerProgressColor arrayFromRGBAComponents];
-				break;
-				
-			case stripesComponent:
-				ccomponents = [self.stripeColor arrayFromRGBAComponents];
-				break;
-				
-			default:
-				break;
-		}
-		NSNumber *ccomponent = [ccomponents objectAtIndex:i];
-		components[i+4] = (CGFloat)[ccomponent floatValue];
-	}
+	koaGradient *gradient = [[koaGradient alloc] initWithStartingColor:self.lighterStripeColor endingColor:self.darkerStripeColor];
+    UIBezierPath* allStripes = [[UIBezierPath alloc] init];
+    
+    for (int i = 0; i <= frame.size.width/(2*self.stripeWidth)+(2*self.stripeWidth); i++) {
+		UIBezierPath *stripe = [self stripeWithOrigin:CGPointMake(i*2*self.stripeWidth+self.progressOffset, self.inset) bounds:frame];
+		[allStripes appendPath:stripe];
+    }
+    
+    //clip
+	UIBezierPath *clipPath = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:self.radius];
+    [clipPath addClip];
+    
+    [gradient drawInBezierPath:allStripes angle:90];
 }
 
 -(void)drawProgressWithBounds:(CGRect)frame {
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGContextSaveGState(ctx);
-    {
-        UIBezierPath *progressBounds = [UIBezierPath bezierPathWithRoundedRect:frame
-																  cornerRadius:self.radius];
-        CGContextAddPath(ctx, [progressBounds CGPath]);
-        CGContextClip(ctx);
-		
-        size_t num_locations = 2;
-        CGFloat locations[] = {0.0, 1.0};
-		[self colorComponentsForComponent:progressComponent];
-
-        CGGradientRef gradient = CGGradientCreateWithColorComponents (colorSpace, components, locations, num_locations);
-        CGContextDrawLinearGradient(ctx, gradient, CGPointMake(frame.origin.x, frame.origin.y), CGPointMake(frame.origin.x + frame.size.width, frame.origin.y), (kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation));
-        CGGradientRelease(gradient);
-    }
-    CGContextRestoreGState(ctx);
-    
-    CGColorSpaceRelease(colorSpace);
+	UIBezierPath *bounds = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:self.radius];
+    koaGradient *gradient = [[koaGradient alloc] initWithStartingColor:self.lighterProgressColor endingColor:self.darkerProgressColor];
+    [gradient drawInBezierPath:bounds angle:90];
 }
 
 - (void)drawGlossWithRect:(CGRect)rect
@@ -415,5 +339,4 @@
 	float steps = distance / self.progressValue;
 	self.timerInterval = duration / steps;
 }
-
 @end
