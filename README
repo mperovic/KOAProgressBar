@@ -16,9 +16,10 @@ Choose your own colors:
   [koaProgressBar setShadowColor:[UIColor colorWithRed:223.0/255.0 green:238.0/255.0 blue:181.0/255.0 alpha:1.0]];
   [koaProgressBar setprogressBarColorBackground:[UIColor colorWithRed:25.0/255.0 green:29.0/255 blue:33.0/255.0 alpha:1.0]];
   [koaProgressBar setProgressBarColorBackgroundGlow:[UIColor colorWithRed:17.0/255.0 green:20.0/255.0 blue:23.0/255.0 alpha:1.0]];
-  [koaProgressBar setStripeColor:[UIColor colorWithRed:101.0/255.0 green:151.0/255.0 blue:120.0/255.0 alpha:0.9]];
   [koaProgressBar setLighterProgressColor:[UIColor colorWithRed:223.0/255.0 green:237.0/255.0 blue:180.0/255.0 alpha:1.0]];
   [koaProgressBar setDarkerProgressColor:[UIColor colorWithRed:156.0/255.0 green:200.0/255.0 blue:84.0/255.0 alpha:1.0]];
+  [koaProgressBar setLighterStripeColor:[UIColor colorWithRed:182.0/255.0 green:216.0/255.0 blue:86.0/255.0 alpha:1.0]];
+	[koaProgressBar setDarkerStripeColor:[UIColor colorWithRed:126.0/255.0 green:187.0/255.0 blue:55.0/255.0 alpha:1.0]];
 
 Set timer interval & progresBar increment:
   [koaProgressBar setTimerInterval:0.05];
