@@ -1,4 +1,4 @@
-KOAProgressBar (KeepOnApps ProgressBar)
+KOAProgressBar
 
 The KOAProgressBar is a custom progress bar for iOS 5.0+ with a full controll over animation.
 
@@ -32,4 +32,4 @@ And do the magic:
   [koaProgressBar startAnimation:self];
 
 contact:
-  contact@keeponapps.com
+  miroslav.perovic@icloud.com
